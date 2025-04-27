@@ -1,0 +1,29 @@
+[project]
+name = "Flight_Price_Prediction_ML"
+version = "0.1.0"
+description = "Predicts the price of flight tickets"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "catboost>=1.2.8",
+    "dynaconf>=3.2.10",
+    "lightgbm>=4.6.0",
+    "matplotlib>=3.10.1",
+    "notebook>=7.4.1",
+    "numpy>=2.2.5",
+    "oxylabs>=2.0.0",
+    "pandas>=2.2.3",
+    "plotly>=6.0.1",
+    "pytest>=8.3.5",
+    "pytest-mock>=3.14.0",
+    "requests>=2.32.3",
+    "scikit-learn>=1.6.1",
+    "seaborn>=0.13.2",
+    "tqdm>=4.67.1",
+    "xgboost>=3.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
