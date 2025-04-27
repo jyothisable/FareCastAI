@@ -1,10 +1,14 @@
-.github
+*.github
 backend
 frontend
 infra
 
 
+*.csv
 
+*.secrets.toml
+
+*.vscode*
 # Project specific
 poetry.lock
 data/processed/FE.csv
@@ -14,7 +18,7 @@ mlruns*
 data/loan.csv
 # Boilerplate gitignore from official gitignore
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*__pycache__*
 *.py[cod]
 *$py.class
 Prediction_Model/trained_models/fe_eval_model.pkl
@@ -24,7 +28,7 @@ Prediction_Model/trained_models/fe_eval_tuned_model.pkl
 *.so
 
 # Distribution / packaging
-.Python
+*.Python
 build/
 develop-eggs/
 dist/
@@ -139,8 +143,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
-.venv
+*.env
+*.venv
 env/
 venv/
 ENV/
