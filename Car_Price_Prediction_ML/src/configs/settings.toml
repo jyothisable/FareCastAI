@@ -1,0 +1,56 @@
+# Default settings applicable to all environments unless overridden 
+# everything under [default] along with [default.*] can be overwritten 
+# Hierarchy (with dot) is for organization and access purpose only => overwriting is done at variable name level
+[default]
+PROJECT_NAME = "Car_Price_Prediction_ML"
+
+[default.data]
+raw_path = "/path/to/default/raw/data"
+processed_path = "/path/to/default/processed/data"
+log_file = "logs/default_run.log"
+
+[default.model]
+name = "baseline_cnn"
+dropout = 0.2
+
+[default.training]
+epochs = 10
+batch_size = 64
+learning_rate = 0.001
+device = "cpu"
+
+[default.aws]
+region = "us-east-1"
+# Non-sensitive: Bucket name structure might differ per environment
+s3_bucket_uri = "s3://my-ml-bucket-dev"
+# Non-sensitive: Container URL structure might differ
+container_url = "dev.dkr.ecr.us-east-1.amazonaws.com/my-repo"
+
+
+# Settings specific to the 'production' environment
+# * These merge with and override [default] at variable name level (no hierarchy) 
+# when ENV_FOR_DYNACONF=production is available in the environment => `export ENV_FOR_DYNACONF=production`
+[production]
+log_level = "WARNING"
+
+[production.data]
+raw_path = "/path/to/production/raw/data"
+processed_path = "/path/to/production/processed/data"
+log_file = "logs/production_run.log"
+
+[production.training]
+epochs = 50
+learning_rate = 0.0005
+device = "cuda" # Use GPU for production training
+
+[production.aws]
+s3_bucket_uri = "s3://my-ml-bucket-prod"
+container_url = "prod.dkr.ecr.us-east-1.amazonaws.com/my-repo"
+
+
+# Settings specific to the 'staging' environment => run `export ENV_FOR_DYNACONF=staging` to use these settings
+[staging]
+# Add specific overrides for staging if needed
+# Example: Pointing to a staging S3 bucket
+[staging.aws]
+s3_bucket_uri = "s3://my-ml-bucket-staging"
