@@ -8,6 +8,7 @@ infra
 
 *.secrets.toml
 
+Car_Price_Prediction_ML/src/data
 *.vscode*
 # Project specific
 poetry.lock
